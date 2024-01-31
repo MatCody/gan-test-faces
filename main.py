@@ -12,7 +12,7 @@ import os
 import numpy as np
 app = FastAPI()
 
-# MongoDB Settings
+# MongoDB Settings - to test [change the database if needed]
 MONGO_URL = "mongodb://localhost:27017"
 DATABASE_NAME = "mine"
 COLLECTION_NAME = "teste_gan"
@@ -27,6 +27,7 @@ collection = db[COLLECTION_NAME]
 restorer = GFPGANer(
     model_path="GFPGANv1.3.pth",
     #model_path="GFPGANCleanv1-NoCE-C2.pth",
+    # ! ANY OTHER .pth file
     upscale=2,
     arch="clean",
     channel_multiplier=2,
